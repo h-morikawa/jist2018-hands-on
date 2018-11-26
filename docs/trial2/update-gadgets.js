@@ -57,3 +57,16 @@ function render003(json) {
       };
       d3sparql.htmlhash(json, config);
 }
+
+function updateGadget004(click_uri)
+{
+    $('#gadget-004').empty();
+    var sparql_val = getSPARQL004().trim();
+    sparql_val = sparql_val.replace(/<%URI%>/g, '<'+click_uri+'>');
+    var Q = new sgvizler.Query();
+    Q.query(sparql_val)
+       .endpointURL("https://lod4all.net/api/sparql?token=jist2018-data")
+       .endpointOutputFormat("json")
+       .chartFunction("google.visualization.PieChart")
+       .draw("gadget-004");
+}
