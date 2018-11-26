@@ -13,6 +13,7 @@ function updateGadgets(click_uri)
     updateGadget001(click_uri);
     updateGadget002(click_uri);
     updateGadget003(click_uri);
+    updateGadget004(click_uri);
 }
 
 function updateGadget001(click_uri)
